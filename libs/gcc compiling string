@@ -1,0 +1,8 @@
+SENDER
+gcc -o test_sender_exe RUDPTransf_Sender.c libs/libRUDP-transfer_aux.c libs/libRUDP-transfer_sender.c libs/libRUDP-generic.c libs/listP.c -lpthread
+RECVER
+gcc -o test_recver_exe RUDPTransf_Recver.c libs/libRUDP-transfer_aux.c libs/libRUDP-transfer_recver.c libs/listP.c -lpthread
+SERVER
+gcc -o RUDPserver RUDP_Server.c libs/libRUDP-generic.c RUDPTransf_Sender.c RUDPTransf_Recver.c libs/libRUDP-transfer_aux.c libs/libRUDP-transfer_sender.c libs/libRUDP-transfer_recver.c libs/listP.c -lpthread
+CLIENT
+gcc -o RUDPclient RUDP_Client.c libs/libRUDP-generic.c RUDPTransf_Sender.c RUDPTransf_Recver.c libs/libRUDP-transfer_aux.c libs/libRUDP-transfer_sender.c libs/libRUDP-transfer_recver.c libs/listP.c -lpthread
